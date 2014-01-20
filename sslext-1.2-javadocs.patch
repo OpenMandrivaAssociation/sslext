@@ -1,0 +1,46 @@
+--- build.xml	2012-07-09 17:55:25.669707599 +0200
++++ build.xml-gil	2012-07-09 17:55:37.292140796 +0200
+@@ -26,6 +26,14 @@
+         </fileset>
+     </path>
+ 
++   <path id="javadoc.classpath">
++    <path refid="class.path"/>
++    <pathelement location="${classes}/**"/>
++    <fileset dir="${lib}">
++            <include name="sslext.jar"/>
++    </fileset>
++   </path>
++
+     <target name="init">
+         <tstamp/>
+     </target>
+@@ -144,6 +152,28 @@
+      	/>
+     </target>
+ 
++    <target name="javadoc" description="generates javadocs">
++        <mkdir dir="docs"/>
++        <tstamp>
++            <format property="year" pattern="yyyy" />
++        </tstamp>
++        <!-- Locale must be before any doclet parameters -->
++        <javadoc
++            packagenames="*"
++            Locale="en_US"
++            sourcepath="${src}"
++            destdir="docs"
++            author="true"
++            version="true"
++            private="false"
++            use="true"
++            windowtitle="Struts SSL Switching Extension">
++            <doctitle><![CDATA[<h2>Struts SSL Switching Extension</h2>]]></doctitle>
++            <bottom><![CDATA[<i>Copyright 1999, ${year} The Apache Software Foundation,  All Rights Reserved</i>]]></bottom>
++            <classpath refid="javadoc.classpath"/>
++        </javadoc>
++    </target>
++    
+      <target name="make-bin-zips" depends="make-jar, make-bin-tar, make-bin-zip">
+     </target>
+    

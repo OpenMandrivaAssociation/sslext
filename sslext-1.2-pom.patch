@@ -1,0 +1,26 @@
+--- pom.xml	2005-11-08 22:53:43.000000000 +0100
++++ pom.xml-gil	2012-05-27 05:19:18.277207739 +0200
+@@ -17,9 +17,19 @@
+   </organization>
+   <dependencies>
+     <dependency>
+-      <groupId>struts</groupId>
+-      <artifactId>struts</artifactId>
+-      <version>1.2.7</version>
++      <groupId>org.apache.struts</groupId>
++      <artifactId>struts-core</artifactId>
++      <version>1.3.10</version>
++    </dependency>
++    <dependency>
++      <groupId>org.apache.struts</groupId>
++      <artifactId>struts-taglib</artifactId>
++      <version>1.3.10</version>
++    </dependency>
++    <dependency>
++      <groupId>org.apache.struts</groupId>
++      <artifactId>struts-tiles</artifactId>
++      <version>1.3.10</version>
+     </dependency>
+   </dependencies>
+ </project>
+\ Manca newline alla fine del file

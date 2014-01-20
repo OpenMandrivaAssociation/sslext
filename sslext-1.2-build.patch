@@ -1,0 +1,39 @@
+--- build.xml	2004-09-18 21:56:33.000000000 +0200
++++ build.xml-gil	2012-06-06 11:11:15.937687091 +0200
+@@ -5,14 +5,24 @@
+     <property name="classes" value="${web-inf}/classes"/>
+     <property name="lib" value="${web-inf}/lib"/>
+     <!-- <property name="build.compiler" value="jikes"/> -->
+-    <property name="j2ee.lib" value="../lib/j2ee12.jar"/>
++    <property name="j2ee.lib" value="/usr/share/java/tomcat-servlet-3.0-api.jar"/>
+     <property file="buildsslext.properties"/>
+ 
+     <path id="class.path">
+         <pathelement path="${src}"/>
+         <pathelement path="${j2ee.lib}"/>
+-        <fileset dir="${lib}">
+-            <include name="**/*.jar"/>
++        <fileset dir="/usr/share/java/">
++            <include name="commons-beanutils.jar"/>
++            <include name="commons-collections.jar"/>
++            <include name="commons-digester.jar"/>
++            <include name="commons-fileupload.jar"/>
++            <include name="commons-logging.jar"/>
++            <include name="commons-validator.jar"/>
++            <include name="oro.jar"/>
++            <include name="struts/core.jar"/>
++            <include name="struts/taglib.jar"/>
++            <include name="struts/tiles.jar"/>
++            <include name="tomcat-jsp-2.2-api.jar"/>
+         </fileset>
+     </path>
+ 
+@@ -26,6 +36,8 @@
+             destdir="${classes}"
+             classpathref="class.path"
+             debug="on"
++            source="1.5"
++            target="1.5"
+         />
+     </target>
+ 
