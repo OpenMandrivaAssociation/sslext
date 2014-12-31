@@ -1,9 +1,9 @@
 %{?_javapackages_macros:%_javapackages_macros}
 Name:          sslext
 Version:       1.2
-Release:       5.0%{?dist}
+Release:       7.1
 Summary:       Struts SSL Switching Extension
-
+Group:         Development/Java
 License:       ASL 1.1
 Url:           http://sslext.sourceforge.net/
 #cvs -d:pserver:anonymous@sslext.cvs.sourceforge.net:/cvsroot/sslext login
@@ -60,7 +60,6 @@ Configuration is performed within the Struts config XML file.
 %package javadoc
 
 Summary:       Javadoc for %{name}
-Requires:      jpackage-utils
 
 %description javadoc
 This package contains javadoc for %{name}.
@@ -91,10 +90,7 @@ install -pm 644 pom.xml %{buildroot}%{_mavenpomdir}/JPP-%{name}.pom
 mkdir -p %{buildroot}%{_javadocdir}/%{name}
 cp -pr docs/* %{buildroot}%{_javadocdir}/%{name}
 
-%files
-%{_javadir}/%{name}.jar
-%{_mavenpomdir}/JPP-%{name}.pom
-%{_mavendepmapfragdir}/%{name}
+%files -f .mfiles
 
 %files javadoc
 %{_javadocdir}/%{name}
