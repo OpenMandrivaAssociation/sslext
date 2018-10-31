@@ -1,7 +1,7 @@
 %{?_javapackages_macros:%_javapackages_macros}
 Name:          sslext
 Version:       1.2
-Release:       7.2
+Release:       7.3
 Summary:       Struts SSL Switching Extension
 Group:         Development/Java
 License:       ASL 1.1
