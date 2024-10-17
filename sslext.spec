@@ -5,7 +5,7 @@ Release:       7.3
 Summary:       Struts SSL Switching Extension
 Group:         Development/Java
 License:       ASL 1.1
-Url:           http://sslext.sourceforge.net/
+Url:           https://sslext.sourceforge.net/
 #cvs -d:pserver:anonymous@sslext.cvs.sourceforge.net:/cvsroot/sslext login
 #cvs -z3 -d:pserver:anonymous@sslext.cvs.sourceforge.net:/cvsroot/sslext export -r Release1_2_1 sslext120
 #rm -rf sslext120/web/WEB-INF/lib/*.jar
